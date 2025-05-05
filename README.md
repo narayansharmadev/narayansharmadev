@@ -2,7 +2,7 @@
 <h3 align="center">🚀 Frontend Developer | React.js | Angular | JavaScript | UI/UX Enthusiast</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=435&lines=Frontend+Developer+🚀;React.js+%7C+Angular+%7C+JavaScript;Clean+%26+Responsive+UI+Designer;Always+learning+%F0%9F%93%9A+Always+building+%F0%9F%92%BB" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=435&lines=Frontend+Developer+🚀;React.js+%7C+Angular+%7C+JavaScript;Clean+%26+Responsive+UI+Designer;Always+learning+%F0%9F%93%9A+Always+building+%F0%9F%92%BB"/>
 </p>
 
 <p align="center">
@@ -68,10 +68,20 @@
 ### 📫 Let’s Connect
 
 <p align="center">
-  <a href="mailto:narayansharma.dev@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://www.linkedin.com/in/narayan-sharma-dev/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="https://narayan-portfolio.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-000?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+  <a href="mailto:narayansharmatech@gmail.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" />
+  </a>
+  <a href="https://www.linkedin.com/in/narayansharmadev/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://narayan-portfolio.vercel.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-000?style=for-the-badge&logo=vercel&logoColor=white" />
+  </a>
+  <a href="https://instagram.com/heynarayasharma" target="_blank">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" />
+  </a>
 </p>
+
 
 ---
 
