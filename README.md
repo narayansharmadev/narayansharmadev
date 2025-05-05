@@ -1,27 +1,86 @@
-<h1 align="center">Hi there 👋, I'm Narayan Sharma</h1>
-<h3 align="center">Frontend Developer | React.js | Angular | JavaScript | UI/UX</h3>
+<h1 align="center">Hey 👋, I'm Narayan Sharma</h1>
+<h3 align="center">🚀 Frontend Developer | React.js | Angular | JavaScript | UI/UX Enthusiast</h3>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&center=true&vCenter=true&width=435&lines=Frontend+Developer+🚀;React.js+%7C+Angular+%7C+JavaScript;Clean+%26+Responsive+UI+Designer;Always+learning+%F0%9F%93%9A+Always+building+%F0%9F%92%BB" alt="Typing SVG" />
+</p>
+
+<p align="center">
+  <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" width="300" />
+</p>
 
 ---
 
-🚀 Passionate about building clean, responsive, and user-centric web applications using modern frontend technologies like **React.js**, **Angular**, and the **MERN stack**.
+### 🌟 About Me
 
-💻 I love working on:
-- Scalable and responsive UI development
-- REST API integration
-- Frontend performance optimization
-- Building tools and components for real-world use
+💻 Passionate about crafting modern, user-centric web apps using **React.js**, **Angular**, and the **MERN stack**  
+🎯 Focused on clean architecture, performance, and pixel-perfect design  
+🚀 I enjoy building scalable frontend solutions & reusable component libraries  
+🧠 Lifelong learner exploring trends in frontend & full-stack tech  
 
-📌 Currently exploring:
-- React Server Components
-- Advanced state management with Zustand & Redux Toolkit
-- Full-stack applications with Next.js + MongoDB
+---
+
+### 🔍 Currently Exploring
+
+- ⚛️ **React Server Components**  
+- 🔄 **Zustand** & **Redux Toolkit** for powerful state management  
+- 🌍 Full-stack development with **Next.js + MongoDB**  
+- 🧪 Testing with **Jest** and **Cypress**
 
 ---
 
 ### 🛠️ Tech Stack
 
-```js
-Frontend: React.js | Angular | TypeScript | JavaScript | Tailwind CSS | SCSS | Material UI  
-Backend: Node.js | Express.js | MongoDB  
-Tools: Git | GitHub | Postman | VS Code | Netlify | Vercel | Docker  
-Testing: Jest | Cypress  
+<div align="center">
+
+<img src="https://img.shields.io/badge/Frontend-React.js-blue?style=for-the-badge&logo=react" />
+<img src="https://img.shields.io/badge/Angular-red?style=for-the-badge&logo=angular" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+<img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" />
+<img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css" />
+<img src="https://img.shields.io/badge/Material_UI-0081CB?style=for-the-badge&logo=mui" />
+<br />
+<img src="https://img.shields.io/badge/Backend-Node.js-green?style=for-the-badge&logo=node.js" />
+<img src="https://img.shields.io/badge/Express.js-black?style=for-the-badge&logo=express&logoColor=white" />
+<img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white" />
+<br />
+<img src="https://img.shields.io/badge/Tools-VS%20Code-0078d7?style=for-the-badge&logo=visual-studio-code" />
+<img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" />
+<img src="https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white" />
+
+</div>
+
+---
+
+### 📈 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=narayan-sharma&theme=react&hide_border=true" />
+  <br />
+  <img src="https://github-readme-stats.vercel.app/api?username=narayan-sharma&show_icons=true&theme=react&hide_border=true" />
+  <br />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=narayan-sharma&layout=compact&theme=react&hide_border=true" />
+</p>
+
+---
+
+### 📫 Let’s Connect
+
+<p align="center">
+  <a href="mailto:narayansharma.dev@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/narayan-sharma-dev/" target="_blank"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
+  <a href="https://narayan-portfolio.vercel.app/" target="_blank"><img src="https://img.shields.io/badge/Portfolio-000?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+</p>
+
+---
+
+### 🎯 Fun Fact
+
+🧠 I debug faster with music 🎧 and build better after coffee ☕  
+
+---
+
+<p align="center">
+  <img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=radical" />
+</p>
