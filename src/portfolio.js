@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from "framer-motion";
-import { Github, Linkedin, Mail, ExternalLink, Calendar, User, Code, BookOpen, FileText, Menu, X, ChevronRight, Star, GitFork, Download, Eye, ArrowLeft, Heart, Coffee, Zap, Target, Award, Users } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Calendar, User, Code, BookOpen, FileText, Menu, X, ChevronRight, Star, GitFork, Download, Eye, ArrowLeft, Heart, Coffee, Zap, Target, Award, Users, MapPin } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 // Animation variants
 const fadeIn = {
@@ -61,10 +62,10 @@ export default function Portfolio() {
   const portfolioData = {
     personal: {
       name: "Narayan Sharma",
-      title: "Senior Frontend Developer",
+      title: "Frontend Developer",
       subtitle: "Crafting Digital Experiences with React.js & Angular",
       tagline: "Transforming Ideas into Interactive Realities",
-      bio: "I'm a passionate frontend developer with 3+ years of experience creating stunning, user-centric web applications. I specialize in React.js, Angular, and modern JavaScript ecosystems, with a keen eye for design and performance optimization.",
+      bio: "I'm a passionate frontend developer with 2+ years of experience creating stunning, user-centric web applications. I specialize in React.js, Angular, and modern JavaScript ecosystems, with a keen eye for design and performance optimization.",
       email: "narayan.dev@example.com",
       github: "https://github.com/narayansharma",
       linkedin: "https://linkedin.com/in/narayansharma",
@@ -230,7 +231,7 @@ export default function Portfolio() {
         followers: 145,
         contributions: 1247
       },
-      experience: "3+",
+      experience: "2",
       projects: 28,
       clients: 15,
       coffees: 847
@@ -241,14 +242,15 @@ export default function Portfolio() {
     { id: 'home', label: 'Home', icon: User },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'blogs', label: 'Blog', icon: BookOpen },
-    { id: 'whitepapers', label: 'Research', icon: FileText }
+    { id: 'whitepapers', label: 'Research', icon: FileText },
+    { id: 'contact', label: 'Contact', icon: Mail }
   ];
 
   // Enhanced Logo Component
   const Logo = ({ size = 'default' }) => {
     const sizes = {
-      small: 'w-8 h-8 text-lg',
-      default: 'w-12 h-12 text-xl',
+      small: 'w-12 h-6 text-lg',
+      default: 'w-12 h-6 text-xl',
       large: 'w-20 h-20 text-3xl'
     };
 
@@ -791,16 +793,245 @@ export default function Portfolio() {
                 <span>{paper.pages} pages</span>
                 <span>{paper.downloads.toLocaleString()} downloads</span>
               </div>
-              <button className="flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 hover:from-blue-500/30 hover:to-purple-500/30 text-blue-300 rounded-lg transition-all duration-300 border border-blue-500/30 hover:border-blue-500/50">
-                <Download size={16} />
-                Download Whitepaper
-              </button>
+              <div className="flex gap-3">
+                <button className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-blue-500/20 to-purple-500/20 hover:from-blue-500/30 hover:to-purple-500/30 text-blue-300 rounded-lg transition-all duration-300 border border-blue-500/30 hover:border-blue-500/50">
+                  <Download size={16} />
+                  Download
+                </button>
+                <button className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-gradient-to-r from-purple-500/20 to-pink-500/20 hover:from-purple-500/30 hover:to-pink-500/30 text-purple-300 rounded-lg transition-all duration-300 border border-purple-500/30 hover:border-purple-500/50">
+                  <ExternalLink size={16} />
+                  View
+                </button>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </motion.div>
   );
+
+  // Contact Page Component
+  const ContactPage = () => {
+    const [formData, setFormData] = useState({
+      name: '',
+      email: '',
+      subject: '',
+      message: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState(null);
+
+    const handleChange = (e) => {
+      setFormData({
+        ...formData,
+        [e.target.name]: e.target.value
+      });
+    };
+
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setIsSubmitting(true);
+      
+      try {
+        // Initialize EmailJS with your public key
+        emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual public key
+
+        // Send email using EmailJS
+        await emailjs.send(
+          "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+          "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            subject: formData.subject,
+            message: formData.message,
+            to_email: "narayansharmatech@gmail.com"
+          }
+        );
+        
+        setSubmitStatus({
+          type: 'success',
+          message: 'Thank you for your message! I will get back to you soon.'
+        });
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } catch (error) {
+        console.error('Email error:', error);
+        setSubmitStatus({
+          type: 'error',
+          message: 'Something went wrong. Please try again later.'
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
+    };
+
+    return (
+      <motion.div 
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        variants={pageTransition}
+        className="container mx-auto px-6 py-32"
+      >
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Get in Touch
+            </h1>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Have a question or want to work together? I'd love to hear from you.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Contact Information */}
+            <div className="space-y-8">
+              <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+                <h3 className="text-xl font-bold mb-4 text-blue-400">Contact Information</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3 text-gray-300">
+                    <Mail className="text-blue-400" size={20} />
+                    <a href={`mailto:${portfolioData.personal.email}`} className="hover:text-blue-400 transition-colors">
+                      {portfolioData.personal.email}
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-300">
+                    <MapPin className="text-purple-400" size={20} />
+                    <span>{portfolioData.personal.location}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50">
+                <h3 className="text-xl font-bold mb-4 text-purple-400">Connect</h3>
+                <div className="flex gap-4">
+                  <a 
+                    href={portfolioData.personal.github}
+                    className="p-3 bg-gray-700/50 hover:bg-gray-600/50 rounded-xl transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Github size={20} />
+                  </a>
+                  <a 
+                    href={portfolioData.personal.linkedin}
+                    className="p-3 bg-gray-700/50 hover:bg-gray-600/50 rounded-xl transition-colors"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Linkedin size={20} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50">
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-100"
+                    placeholder="John Doe"
+                  />
+                </div>
+                
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-100"
+                    placeholder="john@example.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium text-gray-400 mb-2">
+                    Subject
+                  </label>
+                  <input
+                    type="text"
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-100"
+                    placeholder="Project Inquiry"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={6}
+                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-gray-100 resize-none"
+                    placeholder="Your message here..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full py-4 px-6 rounded-xl font-semibold text-white transition-all duration-300 
+                    ${isSubmitting 
+                      ? 'bg-gray-600 cursor-not-allowed' 
+                      : 'bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700'
+                    }
+                  `}
+                >
+                  {isSubmitting ? (
+                    <div className="flex items-center justify-center gap-2">
+                      <div className="w-5 h-5 border-t-2 border-b-2 border-white rounded-full animate-spin" />
+                      Sending...
+                    </div>
+                  ) : (
+                    'Send Message'
+                  )}
+                </button>
+
+                {submitStatus && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className={`p-4 rounded-xl ${
+                      submitStatus.type === 'success' 
+                        ? 'bg-green-500/20 border border-green-500/30 text-green-300' 
+                        : 'bg-red-500/20 border border-red-500/30 text-red-300'
+                    }`}
+                  >
+                    {submitStatus.message}
+                  </motion.div>
+                )}
+              </form>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  };
 
   // Enhanced Footer with animations
   const Footer = () => (
@@ -871,6 +1102,7 @@ export default function Portfolio() {
           {currentPage === 'projects' && <ProjectsPage />}
           {currentPage === 'blogs' && <BlogPage />}
           {currentPage === 'whitepapers' && <WhitepapersPage />}
+          {currentPage === 'contact' && <ContactPage />}
         </motion.main>
       </AnimatePresence>
       
